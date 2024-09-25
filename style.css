@@ -1,5 +1,30 @@
-.gridDiv {
+body {
+    display:flex;
+    align-content: center;
+    justify-content: center;
+}
+
+
+#container {
+    display: flex;
+    height: 450px;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowDiv {
+    
     border: solid,red,1px;
     height: 20px;
     width: 20px;
 }
+
+.columDiv {
+    
+    flex-direction: row;
+    border: solid,red,1px;
+    height: 20px;
+    width: 20px;
+}
+
