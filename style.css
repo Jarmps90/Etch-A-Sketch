@@ -8,33 +8,28 @@ body {
 
 #container {
     display: flex;
-    flex-direction: column;
-    height: 352px;
-    width: 360px;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 350px;
+    width: 350px;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
+    
     
 }
 
 .rowDiv {
     display: flex;
-    flex-direction: row;
-   
+    flex-direction: column;
     flex-grow: 1;
-    width: 360px;
-    margin:0;
-    padding: 0;
-   
-    
-    
+    flex-shrink: 1;
 }
 
 .cell {
     display: flex;
     border: solid, black, 1px;
     flex-grow: 1;
+    flex-shrink: 1;
+
     
     
 }
