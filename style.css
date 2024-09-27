@@ -2,29 +2,39 @@ body {
     display:flex;
     align-content: center;
     justify-content: center;
+    border:solid, red, 1px;
 }
 
 
 #container {
     display: flex;
-    height: 450px;
-    width: 500px;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    height: 352px;
+    width: 360px;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    
 }
 
 .rowDiv {
-    
-    border: solid,red,1px;
-    height: 20px;
-    width: 20px;
-}
-
-.columDiv {
-    
+    display: flex;
     flex-direction: row;
-    border: solid,red,1px;
-    height: 20px;
-    width: 20px;
+   
+    flex-grow: 1;
+    width: 360px;
+    margin:0;
+    padding: 0;
+   
+    
+    
 }
 
+.cell {
+    display: flex;
+    border: solid, black, 1px;
+    flex-grow: 1;
+    
+    
+}
