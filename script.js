@@ -1,9 +1,13 @@
 const gridContainer = document.querySelector('#container');
+const gridSizeBtn = document.querySelector('button');
 
 function gridSize() {
-    const gridSizeBtn = document.querySelector('button');
+    
     gridSizeBtn.addEventListener('click', () => {
-        prompt('Enter grid size!')
+        let size = prompt('Enter grid size!')
+        if (size >= 100) {
+            prompt('Way to big, choose another grid size!');
+        }
     }
     );
 };
@@ -11,7 +15,6 @@ function gridSize() {
 
 function gridCreate(size) { 
     
-
     for (let i = 1; i < size; i++) {
     const rowDiv = document.createElement('div');
     rowDiv.classList.add('rowDiv');
@@ -23,6 +26,8 @@ function gridCreate(size) {
         rowDiv.appendChild(cell);
     };
 };
+
+
 };
-gridSize()
-gridCreate(13);
+
+gridCreate(16);
