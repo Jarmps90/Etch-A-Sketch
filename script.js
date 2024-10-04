@@ -1,15 +1,22 @@
 const gridContainer = document.querySelector('#container');
 const gridSizeBtn = document.querySelector('button');
 
+
+
 function gridSize() {
     
     gridSizeBtn.addEventListener('click', () => {
-        let size = prompt('Enter grid size!')
+        while (gridContainer.hasChildNodes()) {
+            gridContainer.removeChild(gridContainer.firstChild);
+        }
+        gridCreate(size = prompt('Enter grid size!'));
         if (size >= 100) {
             prompt('Way to big, choose another grid size!');
         }
-    }
+        gridColor()
+    } 
     );
+    
 };
 
 
@@ -30,4 +37,27 @@ function gridCreate(size) {
 
 };
 
-gridCreate(16);
+function gridColor() {
+
+    const cell = document.querySelectorAll('.cell');
+    
+    cell.forEach((cell) => {
+        cell.addEventListener('mouseover', () => {
+            cell.style.backgroundColor = 'red';
+        }
+        );
+    }
+    );
+};
+
+
+
+
+
+gridCreate(20);
+gridSize();
+gridColor();
+
+    
+
+
