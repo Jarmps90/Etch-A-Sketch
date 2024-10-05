@@ -40,17 +40,20 @@ function gridCreate(size) {
 function gridColor() {
 
     const cell = document.querySelectorAll('.cell');
-    const randomColor = Math.floor(Math.random()*16777215).toString(16)
-    
     cell.forEach((cell) => {
         cell.addEventListener('mouseover', () => {
-            cell.style.backgroundColor = '#' + randomColor;
-        }
+            cell.style.backgroundColor = randomColorGenerator();
+            }
         );
     }
     );
 };
 
+
+function randomColorGenerator() {
+    const randomColor ='#' + Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+};
 
 
 
