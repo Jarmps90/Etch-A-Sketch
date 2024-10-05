@@ -9,10 +9,14 @@ function gridSize() {
         while (gridContainer.hasChildNodes()) {
             gridContainer.removeChild(gridContainer.firstChild);
         }
-        gridCreate(size = prompt('Enter grid size!'));
-        if (size >= 100) {
-            prompt('Way to big, choose another grid size!');
+        let size = prompt('Enter grid size between 1 - 100!');
+        if (size >= 100 || size < 1) {
+            prompt('This is invalid number. Enter number within 1 - 100.');
+            if (size > 100 || size < 1) {
+                return alert('Invalid number');
+            }
         }
+        gridCreate(size)
         gridColor()
     } 
     );
@@ -58,7 +62,7 @@ function randomColorGenerator() {
 
 
 
-gridCreate(20);
+gridCreate(16);
 gridSize();
 gridColor();
 
