@@ -1,28 +1,11 @@
 const gridContainer = document.querySelector('#container');
-const gridSizeBtn = document.querySelector('button');
+const gridSizeBtn = document.querySelector('#gridSizeBtn');
+const resetBtn = document.querySelector('#resetBtn');
 
-
-
-function gridSize() {
-    
-    gridSizeBtn.addEventListener('click', () => {
-        while (gridContainer.hasChildNodes()) {
-            gridContainer.removeChild(gridContainer.firstChild);
-        }
-        let size = prompt('Enter grid size between 1 - 100!');
-        if (size >= 100 || size < 1) {
-            prompt('This is invalid number. Enter number within 1 - 100.');
-            if (size > 100 || size < 1) {
-                return alert('Invalid number');
-            }
-        }
-        gridCreate(size)
-        gridColor()
-    } 
-    );
-    
+function randomColorGenerator() {
+    const randomColor ='#' + Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
 };
-
 
 function gridCreate(size) { 
     
@@ -35,12 +18,27 @@ function gridCreate(size) {
         const cell = document.createElement('div');
         cell.classList.add('cell');
         rowDiv.appendChild(cell);
-    };
+    }; gridColor();
+};
 };
 
-
+function gridSize() {
+    
+    
+    gridSizeBtn.addEventListener('click', () => {
+        while (gridContainer.hasChildNodes()) {
+            gridContainer.removeChild(gridContainer.firstChild);
+        }
+        let size = prompt('Enter grid size between 1 - 100!');
+        if (size >= 100 || size < 1) {
+            prompt('This is invalid number. Enter number within 1 - 100.');
+            if (size > 100 || size < 1) {
+                return alert('Invalid number');
+            }
+        }; gridCreate(size);
+ });
 };
-
+   
 function gridColor() {
 
     const cell = document.querySelectorAll('.cell');
@@ -54,17 +52,26 @@ function gridColor() {
 };
 
 
-function randomColorGenerator() {
-    const randomColor ='#' + Math.floor(Math.random()*16777215).toString(16);
-    return randomColor;
+
+
+function colorReset() {
+    
+    resetBtn.addEventListener('click', () => {
+        while (gridContainer.hasChildNodes()) {
+                gridContainer.removeChild(gridContainer.firstChild);
+            }
+        gridCreate(20);
+    })
 };
+    
+    
 
 
 
+gridCreate(20);
+gridSize()
+colorReset();
 
-gridCreate(16);
-gridSize();
-gridColor();
 
     
 
