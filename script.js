@@ -60,7 +60,7 @@ function colorReset() {
         while (gridContainer.hasChildNodes()) {
                 gridContainer.removeChild(gridContainer.firstChild);
             }
-        gridCreate(20);
+        gridCreate(16);
     })
 };
     
@@ -68,7 +68,7 @@ function colorReset() {
 
 
 
-gridCreate(20);
+gridCreate(16);
 gridSize()
 colorReset();
 
